@@ -1,0 +1,28 @@
+{
+  "name": "azion-whatsapp-middleware",
+  "version": "1.0.0",
+  "description": "Este repositório contém uma implementação de orquestração dinâmica de links de WhatsApp para landing pages estáticas, utilizando **Edge Functions** para reescrever o HTML antes da entrega ao cliente. Isso permite distribuir contatos entre múltiplos números, variar mensagens automaticamente e manter total compatibilidade com mecanismos de busca.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node --test tests/unit/*.test.js tests/unit/**/*.test.js tests/integration/*.test.js tests/integration/**/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renancesarr/azion-whatsapp-middleware.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renancesarr/azion-whatsapp-middleware/issues"
+  },
+  "homepage": "https://github.com/renancesarr/azion-whatsapp-middleware#readme",
+  "dependencies": {
+    "linkedom": "^0.18.12",
+    "parse5": "^7.3.0"
+  }
+}

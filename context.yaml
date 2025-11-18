@@ -1,0 +1,200 @@
+---
+# Estado operacional atual do projeto Code-Brain
+# Complementa context-index.yaml que contém o mapeamento estrutural
+
+context:
+  # Metadados do estado atual
+  last_update: "2025-11-09T03:29:11Z"
+  active_branch: "main"
+  current_phase: "mvp-1"
+
+  # Tasks ativas e seu estado
+  active_tasks:
+    current: []
+    pending: []
+    completed:
+      - id: "T-0001"
+        description: "Orquestrar o gerenciador de contexto"
+        completed_at: "2025-11-08T13:11:13Z"
+        outcome: >-
+          Contexto sincronizado com index e backlog anatômico restaurado.
+      - id: "T-0002"
+        description: "Mapear pipeline INSIGHT→USE-CASE→TO-DO"
+        completed_at: "2025-11-08T16:35:48Z"
+        outcome: >-
+          Pipeline cognitivo documentado e referenciado no prompt/backlog.
+      - id: "T-0003"
+        description: "Consolidar templates fundamentais"
+        completed_at: "2025-11-08T19:31:40Z"
+        outcome: >-
+          Templates chaves atualizados com instruções alinhadas ao pipeline.
+      - id: "T-0005"
+        description: "Implementar validação básica de documentação"
+        completed_at: "2025-11-08T19:31:40Z"
+        outcome: >-
+          Script validate-docs em uso cobrindo YAML/Markdown essenciais.
+      - id: "T-0004"
+        description: "Estabelecer integração Git básica"
+        completed_at: "2025-11-09T01:37:51Z"
+        outcome: >-
+          Workflow Git atualizado com preflight, validações e convenções
+          padronizadas.
+      - id: "T-0006"
+        description: "Definir armazenamento para IN/UC"
+        completed_at: "2025-11-09T02:30:00Z"
+        outcome: >-
+          Diretórios e templates oficiais criados para IN-XXXX e UC-XXXX.
+      - id: "T-0007"
+        description: "Integrar validate-docs/preflight ao pipeline CI"
+        completed_at: "2025-11-09T03:29:11Z"
+        outcome: >-
+          Preflight-CI guidelines agora executam validate-docs antes dos
+          checks em GitHub/GitLab/Jenkins.
+
+  # Contexto de execução atual
+  execution_context:
+    reading_order:
+      - "prompt.md"
+      - "prompt.yaml"
+      - "context-index.yaml"
+      - "AGENTS.md"
+      - "code-brain/project-guide.md"
+      - "code-brain/to-do/tasks.yaml"
+      - "backlog_anatomico_unificado_padronizado.md"
+      - "code-brain/guidelines/pipeline-insight-usecase-todo.md"
+      - "code-brain/scripts/validate-docs.sh"
+      - "code-brain/git/workflow-template.md"
+
+    ai_processing:
+      token_budget: 8000
+      max_files_per_read: 5
+      read_last_n_logs: 3
+
+  # Pipeline de execução
+  pipeline_stages:
+    - stage: "PLAN"
+      required: true
+      description: "Análise e planejamento da ação"
+    - stage: "READ"
+      required: true
+      description: "Leitura de contexto necessário"
+    - stage: "PATCH"
+      required: false
+      description: "Implementação das mudanças"
+    - stage: "TEST"
+      required: true
+      description: "Validação das mudanças"
+    - stage: "NEXT"
+      required: true
+      description: "Definição próximos passos"
+
+  # Regras de governança
+  governance:
+    update_task_status: true
+    create_dev_notes: true
+    validate_changes: true
+    file_ownership:
+      user_controlled:
+        - "context.yaml"
+        - "prompt.yaml"
+        - "backlog_anatomico_unificado_padronizado.md"
+      ai_controlled:
+        - "code-brain/developer/logs-ai-code/"
+        - "code-brain/developer/code-planning.md"
+      shared:
+        - "code-brain/to-do/tasks.yaml"
+
+  # Validação de ambiente
+  environment:
+    required_tools:
+      - "git"
+      - "python3"
+      - "yamllint"
+
+  # Conformidade estrutural com context-index.yaml
+  structure_alignment:
+    directories:
+      - path: "code-brain/to-do/"
+        status: "ok"
+      - path: "code-brain/developer/logs-ai-code/"
+        status: "ok"
+      - path: "code-brain/git/"
+        status: "ok"
+        note: >-
+          Diretório criado para alinhar com o index; conteúdo inicial em
+          workflow-template.
+      - path: "code-brain/templates/"
+        status: "ok"
+      - path: "code-brain/data/"
+        status: "ok"
+      - path: "code-brain/data/insights/"
+        status: "ok"
+      - path: "code-brain/use-cases/"
+        status: "ok"
+    files:
+      - path: "AGENTS.md"
+        status: "ok"
+      - path: "context.yaml"
+        status: "ok"
+      - path: "prompt.yaml"
+        status: "ok"
+      - path: "prompt.md"
+        status: "ok"
+      - path: "code-brain/project-guide.md"
+        status: "ok"
+      - path: "code-brain/to-do/tasks.yaml"
+        status: "ok"
+      - path: "code-brain/to-do/tasks.schema.json"
+        status: "ok"
+      - path: "backlog_anatomico_unificado_padronizado.md"
+        status: "ok"
+        note: "Consolidado com UC-0001..UC-0004 alinhados ao tasks.yaml."
+      - path: "code-brain/guidelines/pipeline-insight-usecase-todo.md"
+        status: "ok"
+        note: "Documento operacional do pipeline INSIGHT→USE-CASE→TO-DO."
+      - path: "code-brain/developer/developer-notes.template.md"
+        status: "ok"
+        note: "Template atualizado com checklist de validação/IDs."
+      - path: "code-brain/project-guide.template.md"
+        status: "ok"
+        note: "Estrutura completa alinhada ao guia oficial."
+      - path: "code-brain/scripts/validate-docs.sh"
+        status: "ok"
+        note: "Script padrão para yamllint + markdown checks."
+      - path: "code-brain/templates/insight.template.md"
+        status: "ok"
+      - path: "code-brain/templates/use-case.template.md"
+        status: "ok"
+      - path: "code-brain/data/insights/README.md"
+        status: "ok"
+      - path: "code-brain/use-cases/README.md"
+        status: "ok"
+      - path: "code-brain/git/workflow-template.md"
+        status: "ok"
+      - path: "code-brain/git/workflow-template.md"
+        status: "ok"
+        note: "Fluxo Git consolidado com preflight e validações."
+
+  # Estado do ciclo atual
+  cycle_state:
+    last_task_completed: "T-0007 — Integrar validate-docs/preflight ao CI"
+    tasks_since_retrospective: 10
+    pending_validations:
+      - "Popular diretórios IN/UC com registros reais"
+
+  # MVP-1 Tracking
+  mvp_tracking:
+    features_implemented:
+      - "Sistema básico de context.yaml"
+      - "Templates fundamentais"
+      - "Backlog anatômico MVP-1"
+      - "Pipeline cognitivo documentado"
+      - "Templates revisados (developer-notes/project-guide)"
+      - "Validação básica de documentação"
+      - "Workflow Git padronizado"
+      - "Repositório IN/UC estruturado"
+      - "Preflight CI com validate-docs"
+    pending_features:
+      - "Estrutura completa de use-cases"
+    next_milestone: >-
+      Publicar primeiros registros IN/UC e conectar métricas aos use-cases

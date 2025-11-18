@@ -1,0 +1,61 @@
+version: "1.0"
+
+directories:
+  insights: "insights/"
+  usecases: "code-brain/use-cases/"
+  todo: "code-brain/to-do/"
+  developer: "code-brain/developer/"
+  git: "code-brain/git/"
+  templates: "code-brain/templates/"
+
+core_files:
+  agents: "AGENTS.md"
+  project_guide: "code-brain/project-guide.md"
+  context: "context.yaml"
+  prompt: "prompt.txt"
+
+schemas:
+  todo: "code-brain/to-do/tasks.schema.json"
+  context: "code-brain/templates/context.schema.yaml"
+  data: "code-brain/data/data-dictionary.schema.json"
+
+patterns:
+  usecase_files: "^UC-[0-9]{3}-.+\.md$"
+  ai_logs: "^[0-9]{10,}-ia-code\.md$"
+  dev_notes: "^[0-9]{8}-dev-notes\.md$"
+
+templates:
+  developer_notes: "code-brain/developer/developer-notes.template.md"
+  project_guide: "code-brain/project-guide.template.md"
+  workflow: "code-brain/git/workflow-template.md"
+  usecase: "code-brain/use-cases/template.md"
+
+required_structure:
+  directories:
+    - "code-brain/to-do/"
+    - "code-brain/developer/logs-ai-code/"
+    - "code-brain/git/"
+    - "code-brain/use-cases/"
+  files:
+    - "AGENTS.md"
+    - "context.yaml"
+    - "prompt.txt"
+    - "code-brain/project-guide.md"
+
+governance:
+  file_ownership:
+    user_controlled:
+      - "context.yaml"
+      - "prompt.txt"
+    ai_controlled:
+      - "code-brain/developer/logs-ai-code/"
+    shared:
+      - "code-brain/to-do/tasks.yaml"
+
+linked_projects:
+  azion_whatsapp_middleware:
+    name: "azion-whatsapp-middleware"
+    root: "projects/azion-whatsapp-middleware/"
+    docs: "projects/azion-whatsapp-middleware/docs/"
+    tasks: "projects/azion-whatsapp-middleware/tasks/"
+    use_case: "code-brain/use-cases/UC-azion-whatsapp-middleware.md"
